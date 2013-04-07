@@ -1,0 +1,26 @@
+
+Author: John Bernier 4/13
+ extendableArray.java
+  functionally equivalent to an ArrayList, but with different
+  internal mechanisms for allowing for unlimited array space.
+  
+  this implementation uses a two dimensional array where each
+  array row increases in size by a power when an element is 
+  inserted into the array, the index is hashed into the first array
+  by finding the log based 2 value, the element is then positioned
+  into the second array by subtracting the lowest index value in 
+  that specific array from the index given by the user.
+
+ Performance:
+  The performance advantage that this structure has over the ArrayList
+  is that the entire array does not have to be copied over everytime 
+  the array is expanded. However, there is more overhead for each operation,
+  but all operations should occur in roughly the same amount of time. where 
+  as with an ArrayList some operations may take much longer
+
+ Time Complexity:
+  access time O(1)
+  placement time O(1)
+
+ Space Complexty:
+  2^(Ceiling (log(array size)based 2))
